@@ -5,6 +5,7 @@ var app = express();
 function handleRequest (req, res) {
   request('http://inspirobot.me/api?generate=true', function (err, response, body) {
     res.send({
+      response_type: 'in_channel',
       attachments: [
         {
           image_url: body
